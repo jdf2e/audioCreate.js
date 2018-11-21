@@ -18,9 +18,9 @@
   
   参数说明:obj需要的传参:src(音频的引用路径)，isloop（是否循环播放）
   
-  | 参数名   | 参数功能  | 示例
+  | 参数名称  | 参数功能  | 示例
   |  ----------  | -------|----
-  | obj | src(音频的引用路径)，isloop（是否循环播放）| {src: 'https://storage.jd.com/jdc-op-fd/audio/bgmusic.mp3',isloop: true}
-  | index | 索引（播放第几个音频） | jdMusic.play(0)
+  | obj       | src(音频的引用路径)，isloop（是否循环播放）| {src: 'https://storage.jd.com/jdc-op-fd/audio/bgmusic.mp3',isloop: true}
+  | index     | 索引（播放第几个音频） | jdMusic.play(0)
 
  
