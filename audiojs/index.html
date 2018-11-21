@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>M页内调用音频组建example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> -->
+    <script src="js/zepto.js"></script>
+    <style>
+        #createAudio,
+        #play,
+        #play1,
+        #play2,
+        #pause,
+        #autoChk {
+            width: 100%;
+            height: 100%;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            background-color: #d5d5d5;
+            font-size: 20px;
+            overflow-wrap: break-word;
+            color: red;
+        }
+        
+        .vc-switch {
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="createAudio">
+        动态创建音频(自动播放)
+    </div>
+    <div id="play1">
+        播放(play01)
+    </div>
+    <div id="play2">
+        播放(play02)
+    </div>
+    <div id="pause">
+        暂停(pause)
+    </div>
+    <script>
+        // eruda.init();
+        var jdMusic = window.jdMusic
+
+        $("#createAudio").on('click', function() {
+            try {
+                jdMusic.create('https://storage.jd.com/jdc-op-fd/audio/bgmusic.mp3', 'play')
+                jdMusic.create([{
+                    src: 'https://storage.jd.com/jdc-op-fd/audio/bgmusic.mp3',
+                    isloop: true
+                }, {
+                    src: 'https://storage.jd.com/jdc-op-fd/audio/bgmusic.mp3',
+                    isloop: true
+                }])
+            } catch (e) {
+                alert(e.message)
+            }
+        })
+        $("#play1").on('click', function() {
+            try {
+                jdMusic.play(0)
+            } catch (e) {
+                alert(e.message)
+            }
+        })
+        $("#play2").on('click', function() {
+            try {
+                jdMusic.play(1)
+            } catch (e) {
+                alert(e.message)
+            }
+        })
+        $("#pause").on('click', function() {
+            try {
+                jdMusic.pause()
+            } catch (e) {
+                alert(e.message)
+            }
+        })
+    </script>
+    <script src="js/jmsound.js"></script>
+</body>
+
+</html>
