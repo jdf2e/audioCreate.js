@@ -4,9 +4,17 @@
   
 ## 你可以在项目中这么使用它
 
-  jdMusic.create([obj,obj])
-  jdMusic.play(index)
-  jdMusic.pause()
+    创建（初始化）音频：
+  
+    jdMusic.create([obj,obj])
+    
+    播放选定音频：
+    
+    jdMusic.play(index)
+    
+    停止播放音频：
+    
+    jdMusic.pause()
   
   参数说明:obj需要的传参:src(音频的引用路径)，isloop（是否循环播放）
   
