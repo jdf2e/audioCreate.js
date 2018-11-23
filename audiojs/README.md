@@ -1,26 +1,57 @@
-# audioCreate.js使用说明
+# audioCreate.js
 
-  audioCreate.js是一款可以创建多个audio标签并且很大限度兼容app端、微信端、h5端、pc端的audio.js插件
-  
-## 你可以在项目中这么使用它
+  audioCreate.js是一款可以创建一个或多个 Audio 标签并且很大限度兼容JDapp端、微信端、h5端、pc端的audio.js插件
+## 示例
+```
+ import jdMusic from '@jmfe/jm-sound' //这是个demo,待修改路径
+ jdMusic.create([{
+                src: 'https://jdch5.jd.com/yayoi/res/raw-assets/Sound/A.mp3',
+                isloop: false,
+                id: 'demo1',
+                class: 'demo1',
+                autoplay: false
+            }, {
+                src: 'https://jdch5.jd.com/yayoi/res/raw-assets/Sound/B.mp3',
+                isloop: false,
+                id: 'demo2',
+                class: 'demo2',
+                autoplay: true
+            }]);
+ jdMusic.play(0)
+ jdMusic.pause()
 
-    创建（初始化）音频：
+```
+## 安装
+```
+ npm install -S @jmfe/jm-sound --registry=http://registry.m.jd.com //这是个demo,待修改路径
+ 
+```
+或者页面直接引入这个js。
+```
+<script src="js/audioCreate.js"></script>
+
+```
   
-    jdMusic.create([obj,obj])
-    
-    播放选定音频：
-    
-    jdMusic.play(index)
-    
-    停止播放音频：
-    
-    jdMusic.pause()
+## 接口
+
+| 方法 | 说明
+| --------------- | -------------
+| jdMusic.create([obj,obj]) | 动态创建 Audio
+| jdMusic.play(index) | 开始播放音频
+| jdMusic.pause() | 停止播放音频
+
   
   参数说明:obj需要的传参:src(音频的引用路径)，isloop（是否循环播放）
   
-  | 参数名称  | 参数功能  | 示例
-  |  ----------  | -------|----
-  | obj       | src(音频的引用路径)，isloop（是否循环播放）| {src: 'https://storage.jd.com/jdc-op-fd/audio/bgmusic.mp3',isloop: true}
-  | index     | 索引（播放第几个音频） | jdMusic.play(0)
+  | 参数名称     | 类型       |       必填 |  说明  
+  |  ----------  | ---------- | ---------- | ----------
+  | obj       | Object | true | 音频对象
+  | src | String | true | 属于obj的属性，音频的路径地址
+  | isloop | Boolean | false | 属于obj的属性，音频是否循环播放，默认为false
+  | id | String | false | 属于obj的属性，音频标签Id
+  | class | String | false | 属于obj的属性，音频标签Class
+  | autoplay | Boolean | false | 属于obj的属性,音频是否加载完毕自动播放，只能设置一个为true，如果设置多个则默认自动播放第一个 autoplay 为true的Aduio
+  | index     | Number | false | 播放第几个音频，补填默认播放第一个
+  
 
  
