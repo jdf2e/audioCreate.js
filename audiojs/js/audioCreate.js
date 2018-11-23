@@ -82,7 +82,7 @@
                 return;
             }
             window.audioArr = audioArr;
-            window.playIndex = 0;
+            window.playIndex;
             let autoplaySelf = 0;
             if (this.wvt == 'unknown') {
                 this.wvt = chkWebviewType();
@@ -105,23 +105,27 @@
                     audioArr[i]["isloop"] = false;
                 } else if (typeof audioArr[i]["autoplay"] == "undefined") {
                     audioArr[i]["autoplay"] = "";
-                } else if (typeof audioArr[i]["id"] == "undefined") {
-                    audioArr[i]["id"] = ("audioIndex" + i);
-                } else {
-                    var temp = document.createElement('audio');
-                    temp.setAttribute('id', audioArr[i]["id"]);
-                    temp.setAttribute('class', ("audioClass" + " " +
-                        audioArr[i]["class"]));
-                    temp.setAttribute('src', audioArr[i]["src"]);
-                    if (audioArr[i]["isloop"]) {
-                        temp.setAttribute('loop', "loop")
-                    }
-                    document.querySelector('body').appendChild(temp);
-                    if (audioArr[i]["autoplay"]) {
-                        this.play(i)
-                    }
+                } else if (!audioArr[i]["id"]) {
+                    audioArr[i]["id"] = ("audioId" + i);
                 }
             }
+            for (var q = 0; q < audioArr.length; q++) {
+                var temp = document.createElement('audio');
+                temp.setAttribute('id', audioArr[q]["id"]);
+                temp.setAttribute('class', ("audioClass" + " " +
+                    audioArr[q]["class"]));
+                temp.setAttribute('src', audioArr[q]["src"]);
+                if (audioArr[q]["isloop"]) {
+                    temp.setAttribute('loop', "loop")
+                }
+                document.querySelector('body').appendChild(temp);
+                if (audioArr[q]["autoplay"]) {
+                    this.play(q)
+                }
+            }
+
+            console.log(audioArr)
+
         }
 
         // 音频播放
@@ -150,7 +154,9 @@
             }
             if (this.wvt == 'ios8') return; // ios8 不做音频需求 
 
-            audioDOM = document.querySelector("#" + audioArr[playIndex]["id"]).pause()
+            if (typeof playIndex != "undefined") {
+                audioDOM = document.querySelector("#" + audioArr[playIndex]["id"]).pause()
+            }
 
             // 先判断要通知给原生的state，保证站外也能用state判断
             if (this.soundRouter.routerParam.state == 'pause') return;
