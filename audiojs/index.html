@@ -44,46 +44,36 @@
         暂停(pause)
     </div>
     <script>
-        // eruda.init();
         var jdMusic = window.jdMusic
 
         $("#createAudio").on('click', function() {
-            try {
-                jdMusic.create('https://storage.jd.com/jdc-op-fd/audio/bgmusic.mp3', 'play')
-                jdMusic.create([{
-                    src: 'https://storage.jd.com/jdc-op-fd/audio/bgmusic.mp3',
-                    isloop: true
-                }, {
-                    src: 'https://storage.jd.com/jdc-op-fd/audio/bgmusic.mp3',
-                    isloop: true
-                }])
-            } catch (e) {
-                alert(e.message)
-            }
+            jdMusic.create([{
+                src: 'https://jdch5.jd.com/yayoi/res/raw-assets/Sound/A.mp3',
+                isloop: false,
+                id: 'demo1',
+                class: 'demo1',
+                autoplay: false
+            }, {
+                src: 'https://jdch5.jd.com/yayoi/res/raw-assets/Sound/B.mp3',
+                isloop: false,
+                id: 'demo2',
+                class: 'demo2',
+                autoplay: true
+            }])
+
         })
         $("#play1").on('click', function() {
-            try {
-                jdMusic.play(0)
-            } catch (e) {
-                alert(e.message)
-            }
+            jdMusic.play(0)
         })
         $("#play2").on('click', function() {
-            try {
-                jdMusic.play(1)
-            } catch (e) {
-                alert(e.message)
-            }
+            jdMusic.play(1)
+
         })
         $("#pause").on('click', function() {
-            try {
-                jdMusic.pause()
-            } catch (e) {
-                alert(e.message)
-            }
+            jdMusic.pause()
         })
     </script>
-    <script src="js/audioCreate.js"></script>
+    <script src="js/jmsound.js"></script>
 </body>
 
 </html>
