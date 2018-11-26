@@ -51,7 +51,7 @@
   | id | String | false | 属于obj的属性，音频标签Id
   | class | String | false | 属于obj的属性，音频标签Class
   | autoplay | Boolean | false | 属于obj的属性,音频是否加载完毕自动播放，只能设置一个为true，如果设置多个则默认自动播放第一个 autoplay 为true的Aduio
-  | index     | Number | false | 播放第几个音频，补填默认播放第一个
+  | index     | Number | false | 播放第几个音频，不填默认播放第一个
   
 
  
