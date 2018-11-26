@@ -3,7 +3,6 @@
   audioCreate.js是一款可以创建一个或多个 Audio 标签并且很大限度兼容JDapp端、微信端、h5端、pc端的audio.js插件
 ## 示例
 ```
- import jdMusic from '@jmfe/jm-sound' //这是个demo,待修改路径
  jdMusic.create([{
                 src: 'https://jdch5.jd.com/yayoi/res/raw-assets/Sound/A.mp3',
                 isloop: false,
