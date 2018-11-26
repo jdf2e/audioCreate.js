@@ -22,8 +22,11 @@
 
 ```
 ## 安装
+npm install jdf2e-audio
+
 ```
- npm install -S @jmfe/jm-sound --registry=http://registry.m.jd.com //这是个demo,待修改路径
+
+ npm install jdf2e-audio
  
 ```
 或者页面直接引入这个js。
