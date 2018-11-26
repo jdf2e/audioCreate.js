@@ -1,0 +1,26 @@
+{
+  "name": "audio",
+  "version": "1.0.0",
+  "description": "多音频播放插件",
+  "main": "lib/audioCreate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdf2e/audioCreate.js.git"
+  },
+  "keywords": [
+    "audio",
+    "music",
+    "sound",
+    "音频",
+    "jdf2e"
+  ],
+  "author": "Liuxinjin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdf2e/audioCreate.js/issues"
+  },
+  "homepage": "https://github.com/jdf2e/audioCreate.js#readme"
+}
