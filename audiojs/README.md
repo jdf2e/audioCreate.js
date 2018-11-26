@@ -21,7 +21,7 @@
 
 ```
 ## 安装
-npm install jdf2e-audio
+jdf2e-audio npm包
 
 ```
 
